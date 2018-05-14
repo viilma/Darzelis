@@ -1,0 +1,27 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+#textfield{
+	
+	}
+	
+#buttons{
+	-fx-text-fill: #ffffcc;
+	-fx-background-radius: 5, 5, 5, 5;
+	-fx-padding: 3px 10px 3px 10px;
+	-fx-background-color: #42617F;
+	-fx-font-weight:bold;
+}
+
+#text{
+	-fx-fill: #E8E689;
+}
+
+#gridPane{
+-fx-background-color: #ffffcc;
+-fx-border-color: white;
+-fx-border-radius: none;
+}
+
+#borderPane{
+	-fx-background-color: #42617F;
+}
