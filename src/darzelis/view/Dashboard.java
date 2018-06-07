@@ -245,11 +245,9 @@ public class Dashboard {
 		gpMygtukai.add(btnDelete,1,0);
 		gpMygtukai.add(btnUpdate,2,0);
 		gpMygtukai.add(btnSearchByName,3,0);
-		//gpMygtukai.setPadding(new Insets(10,10,10,10));
 		gpMygtukai.setVgap(10);
 		gpMygtukai.setHgap(10);
 				
-		
 		HBox hbDashboardText = new HBox();
 		hbDashboardText.getChildren().add(txtDashboard);
 		hbDashboardText.setPadding(new Insets(10,10,10,10));
@@ -262,7 +260,6 @@ public class Dashboard {
 		HBox hbUserInfo = new HBox(); //ar cia yra prasme?
 		hbUserInfo.getChildren().add(gpTop);
 		hbUserInfo.setAlignment(Pos.TOP_CENTER);
-		
 		
 		GridPane gpUgdymas = new GridPane();
 		gpUgdymas.add(rb1, 0, 0);
@@ -297,21 +294,11 @@ public class Dashboard {
 		gpAnketa.add(btnSearchByGroup, 2, 5);
 		gpAnketa.add(lblUzsiemimai, 0, 6);
 		gpAnketa.add(gpUzsiemimai, 1, 6);
-		//gpAnketa.add(btnSearchByTraining, 2, 6);
-		
-		//gpAnketa.add(gpMygtukai, 0, 8, 2, 1);
+
 		gpAnketa.add(gpMygtukai, 0, 8, 4, 1);
 		gpAnketa.setPadding(new Insets(30,10,10,20));
 		gpAnketa.setVgap(10);
 		gpAnketa.setHgap(10);
-		
-		/*
-		gpAnketa.add(lblUserName, 0, 11);
-		gpAnketa.add(lblPrisijunges, 1, 11);
-		gpAnketa.add(btnLogout, 1, 12);
-		gpAnketa.add(btnChangeEmail, 0, 13);
-		gpAnketa.add(btnChangePassword, 1, 13);
-		*/
 		
 		GridPane gpLoggedUser = new GridPane();
 		gpLoggedUser.add(lblUserName, 0,0);
@@ -325,7 +312,6 @@ public class Dashboard {
 		gpLoggedUser.setVgap(10);
 		gpLoggedUser.setHgap(10);
 		if(user.getUserlevel() != USER_LEVEL){//Vartotojas nemato
-			//gpLoggedUser.add(btnUsersAdministration, 2, 0);
 			gpAnketa.add(btnUsersAdministration, 2, 8);
 		}
 
@@ -339,7 +325,6 @@ public class Dashboard {
 		bpRoot.setTop(hbUserInfo);
 		bpRoot.setLeft(gpLeft);
 		bpRoot.setCenter(table);
-		//bpRoot.setBottom(gpLoggedUser);
 		
 		btnAdd.setOnAction((ActionEvent e)->{
 			if(vaikas_validate("add")){
@@ -512,43 +497,6 @@ public class Dashboard {
 		btnUsersAdministration.setOnAction((ActionEvent e)->{
 			AdminDashboard adminDashboard = new AdminDashboard(primaryStage, user);
 		});
-		/*
-		btnSearchByTraining.setOnAction((ActionEvent e)->{
-			uzsiemimai = "";
-			String dance = "";
-			String basketball = "";
-			String football = "";
-			String ceramics = "";
-			String karate = "";
-			
-			if (cb1.isSelected()){
-				dance = cb1.getText();
-			}
-			if (cb2.isSelected()){
-				basketball = cb2.getText();
-				//uzsiemimai = uzsiemimai + "\n"  + cb2.getText();
-			}
-			if (cb3.isSelected()) {
-				football = cb3.getText();
-				//uzsiemimai =  uzsiemimai + "\n" + cb3.getText();
-			}
-			if (cb4.isSelected()) {
-				ceramics = cb4.getText();
-				//uzsiemimai = uzsiemimai + "\n" + cb4.getText();
-			}
-			if (cb5.isSelected()){
-				karate = cb5.getText();
-				//uzsiemimai = uzsiemimai + "\n" + cb5.getText();
-			}
-			data=vaikasDao.searchChildrenByTraining (dance, basketball, football, ceramics, karate, user);
-			table.getItems().clear();
-			table.setItems(data);	
-			if (data.size() == 0)
-			{
-				showAlert(Alert.AlertType.INFORMATION, gpAnketa.getScene().getWindow(), "Form Info!", "Tokių įrašų neegzistuoja");
-			}
-		});
-		*/
 		
 		btnLogout.setOnAction((ActionEvent e)->{
 			Login login = new Login(primaryStage);
